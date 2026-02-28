@@ -7,13 +7,7 @@ export interface Props {
   tags?: string[];
 }
 
-const {
-  date,
-  dateLabel = date,
-  title,
-  href = "#",
-  tags = []
-} = Astro.props;
+const { date, dateLabel = date, title, href = '#', tags = [] } = Astro.props;
 ---
 
 <article class="rounded-[10px] border border-gray-200 bg-white px-4 pt-12 pb-4">
@@ -21,19 +15,21 @@ const {
     {dateLabel}
   </time>
 
-  <a href={href}>
+  <a {href}>
     <h3 class="mt-0.5 text-lg font-medium text-gray-900">
       {title}
     </h3>
   </a>
 
-  {tags.length > 0 && (
-    <div class="mt-4 flex flex-wrap gap-1">
-      {tags.map(tag => (
-        <span class="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs whitespace-nowrap text-purple-600">
-          {tag}
-        </span>
-      ))}
-    </div>
-  )}
+  {
+    tags.length > 0 && (
+      <div class="mt-4 flex flex-wrap gap-1">
+        {tags.map((tag) => (
+          <span class="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs whitespace-nowrap text-purple-600">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )
+  }
 </article>
