@@ -1,0 +1,29 @@
+---
+export interface Props {
+  //date: string;
+  //dateLabel?: string;
+  title: string;
+  //href?: string;
+  //tags?: string[];
+}
+
+const { title } = Astro.props;
+---
+
+<h1>
+  <span class="text-gradient">{title}</span>
+</h1>
+
+<style>
+  	h1 {
+		font-size: 4em;
+		margin-top: 0.25em;
+    font-weight: 800;
+	}
+
+  .text-gradient {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
