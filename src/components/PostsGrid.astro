@@ -1,0 +1,32 @@
+---
+import astroLogo from '../assets/astro.svg';
+import Card from './Card.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const allPosts = await Astro.glob('../content/*.md');
+---
+
+<section id="posts-grid" class="mt-12 flex mx-auto max-w-3xl flex-col gap-6">
+
+    {
+      allPosts.map((post) => (
+        <Card
+          title={post?.frontmatter?.title}
+          date={post?.frontmatter?.pubDate}
+          dateLabel={new Date(post?.frontmatter?.pubDate).toLocaleDateString(
+            'en-US',
+            { year: 'numeric', month: 'long', day: 'numeric' }
+          )}
+          href={post?.url}
+          tags={post?.frontmatter.tags}
+        />
+      ))
+    }
+
+</section>
+
+
