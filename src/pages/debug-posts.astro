@@ -1,0 +1,16 @@
+---
+// src/pages/debug-posts.astro
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("tips");
+---
+
+<ul>
+  {posts.map(post => (
+    <li>
+      <strong>Slug:</strong> {post.slug} <br/>
+      <strong>Título:</strong> {post.data.title} <br/>
+      <strong>URL debería ser:</strong> /posts/{post.slug}
+    </li>
+  ))}
+</ul>

@@ -1,0 +1,44 @@
+---
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Card from '../../components/Card.astro';
+
+const posts: CollectionEntry<'tips'>[] = (await getCollection('tips')).sort(
+  (a: CollectionEntry<'tips'>, b: CollectionEntry<'tips'>): number =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+console.log('Posts:', posts);
+---
+
+<Layout>
+  <Header title="Welcome to Astro!" />
+  <Hero
+    title="Astro is a modern frontend framework for building fast, content-focused websites."
+    description="Astro delivers lightning-fast performance with its unique approach to rendering and optimizing your site."
+  />
+  <section class="mt-12 mx-auto flex max-w-3xl flex-col gap-6">
+    <h2 class="mt-12 text-2xl font-bold">Latest Posts</h2>
+    <p class="mt-4 text-gray-600">
+      Check out our latest blog posts and updates on Astro.
+    </p>
+    {
+      posts.map((post) => (
+        <Card
+          title={post.data.title}
+          date={post.data.pubDate}
+          dateLabel={new Date(post.data.pubDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+          href={`/tips/${post.slug}`}
+          tags={post.data.tags}
+          slug={post.slug}
+        />
+      ))
+    }
+  </section>
+</Layout>

@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@layer theme {
+  :root {
+    --color-layer: #f5f5f5;
+    --color-layer-hover: #e0e0e0;
+    --color-layer-focus: #d0d0d0;
+    --color-layer-active: #c0c0c0;
+    --color-layer-foreground: #000000;
+    
+  }
+}
+
+@layer components {
+  .bg-layer {
+    @apply bg-[var(--color-layer)];
+  }
+
+  .hover\:bg-layer-hover:hover {
+    @apply bg-[var(--color-layer-hover)];
+  }
+
+  .focus\:bg-layer-focus:focus {
+    @apply bg-[var(--color-layer-focus)];
+  }
+
+  .active\:bg-layer-active:active {
+    @apply bg-[var(--color-layer-active)];
+  }
+}

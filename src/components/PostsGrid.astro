@@ -7,7 +7,7 @@ export interface Props {
   description: string;
 }
 
-const allPosts = await Astro.glob('../content/*.md');
+const allPosts = await Astro.glob('../content/tips/*.md');
 ---
 
 <section id="posts-grid" class="mt-12 flex mx-auto max-w-3xl flex-col gap-6">
@@ -28,5 +28,3 @@ const allPosts = await Astro.glob('../content/*.md');
     }
 
 </section>
-
-

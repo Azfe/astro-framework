@@ -1,9 +1,10 @@
 ---
 title: "Hello World"
-pubDate: "2026-03-02"
+pubDate: 2026-03-02
 description: "Hello this is my first recommendation"
-image: 
+image: "https://picsum.photos/640/480"
 tags: ["astro", "javascript"]
+layout: "../../layouts/Posts.astro"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at scelerisque est. Nam quis placerat enim, et laoreet orci. Proin vitae purus dapibus, iaculis odio non, molestie mi. Ut elit lorem, euismod ac enim vestibulum, eleifend fringilla leo. Sed ullamcorper nunc id massa hendrerit faucibus. Sed malesuada ornare libero quis suscipit. Aliquam elementum ante id justo consequat, vitae gravida enim feugiat. Proin et auctor metus.

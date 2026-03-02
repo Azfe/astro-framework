@@ -1,25 +1,26 @@
 ---
 export interface Props {
-  date: string;
-  dateLabel?: string;
+  date: Date | string;
+  dateLabel?: Date | string;
   title: string;
   href?: string;
   tags?: string[];
+  slug?: string;
 }
 
-const { date, dateLabel = date, title, href = '#', tags = [] } = Astro.props;
+const { date, dateLabel = date, title, href = '#', tags = [], slug } = Astro.props;
 ---
 
-<article class="rounded-[10px] border border-gray-200 bg-white px-4 pt-12 pb-4">
-  <time datetime={date} class="block text-xs text-gray-500">
-    {dateLabel}
-  </time>
-
-  <a {href}>
+<article class="rounded-[10px] border border-gray-200 bg-white px-4 pt-6 pb-4">
+  <a href={slug ? `/posts/${slug}` : href} class="mt-2 block">
     <h3 class="mt-0.5 text-lg font-medium text-gray-900">
       {title}
     </h3>
   </a>
+
+  <time datetime={date instanceof Date ? date.toISOString() : date} class="block text-xs text-gray-500">
+    {dateLabel}
+  </time>
 
   {
     tags.length > 0 && (
