@@ -9,7 +9,10 @@ export interface Props {
 }
 ---
 
-<section id="hero">
+<section
+  id="hero"
+  class="flex flex-col items-center justify-center text-center"
+>
   <a href="https://astro.build"
     ><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
   >
@@ -30,7 +33,7 @@ export interface Props {
     </a>
   </section>
   <section id="cards" class="mt-12 flex max-w-3xl flex-col gap-6">
-        <Card2
+    <Card2
       date="2022-10-10"
       dateLabel="10th Oct 2022"
       title="Finding the right guitar for your style - 5 tips"
