@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.tsx';
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import Posts from "../../layouts/Posts.astro";
@@ -20,7 +21,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 <Layout>
-  <Posts post={post}>
+  <Posts post={post}>    
     <Content />
   </Posts>
 </Layout>
