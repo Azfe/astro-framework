@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Footer from './../components/Footer.vue';
+import Social from './../components/Social.svelte';
 ---
 
 <!doctype html>
@@ -15,7 +16,9 @@ import Footer from './../components/Footer.vue';
 	</head>
 	<body>
 		<slot />
-		<Footer />
+		<Footer>
+			<Social />
+		</Footer>
 	</body>
 </html>
 
