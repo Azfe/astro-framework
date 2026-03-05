@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Footer from './../components/Footer.vue';
 import Social from './../components/Social.svelte';
+import HeaderTop from './../components/HeaderTop.tsx';
 ---
 
 <!doctype html>
@@ -15,6 +16,7 @@ import Social from './../components/Social.svelte';
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<HeaderTop client:load />
 		<slot />
 		<Footer>
 			<Social />
