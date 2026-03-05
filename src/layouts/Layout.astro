@@ -3,18 +3,12 @@ import "../styles/global.css";
 import Footer from './../components/Footer.vue';
 import Social from './../components/Social.svelte';
 import HeaderTop from './../components/HeaderTop.tsx';
+import BaseHead from "../components/BaseHead.astro";
 ---
 
 <!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
+<html lang="es">	
+	<BaseHead title="Astro Tips" description="Tips and tricks for building with Astro" />
 	<body>
 		<HeaderTop client:load />
 		<slot />
